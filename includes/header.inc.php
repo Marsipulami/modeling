@@ -1,6 +1,7 @@
 <?php
     include_once("includes/settings.inc.php");
     include_once("includes/inc.inc.php");
+    include_once("includes/logging.inc.php");
     
 
 

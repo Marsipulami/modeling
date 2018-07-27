@@ -31,9 +31,13 @@
             $Qry = $db_link->prepare("UPDATE users SET last_login = :currentdate WHERE users_id = :userID");
             $Qry->execute(array(':userID'=>$result['users_id'], ':currentdate'=>time()));
 
+
+            Log::addLogEntry($db_link, "User ".$_SESSION['username'] . " has logged");
+
             header('Location: /');
 
         }else{
+            Log::addLogEntry($db_link, "User ".$_POST['username'] . " has faled to log in.");
             echo '<div class="alert alert-danger">Inloggen mislukt.</div>';
         }
 
