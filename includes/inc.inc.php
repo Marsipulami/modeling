@@ -3,8 +3,9 @@
 function dbConnect()
 {
 	
-	$pass  = "Sk9STG9Ld0JHZ1VKUm5pZ2hPRHA=";
-	$db  = "paintdatabase";
+	$pass = null;
+	$db = null;
+
 	
 	try {
 		$conn = new PDO('mysql:host=localhost;dbname='.$db, $db, base64_decode($pass));
