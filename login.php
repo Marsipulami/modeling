@@ -73,11 +73,11 @@ body, html {
 ?>
 
 
-<body>
+<body class="bg">
 
 
 
-<div class="container bg">
+<div class="container">
     <h1>Logonpage</h1>
 
     <form method="post" action="" >
