@@ -231,7 +231,7 @@ session_start();
                 
                 <div class="row top-buffer">
                     <div class="col-sm-4 col-lg-4">
-                        <input type="submit" name="submitmodel" class="input-lg" />
+                        <input type="submit" name="submitmodel" class="input-lg" value="Toevoegen" />
                     </div>
                 </div>
                

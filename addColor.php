@@ -116,7 +116,7 @@ while($row = $qry->fetch()) {
 
                 <div class="row top-buffer">
                     <div class="col-sm-4 col-lg-4">
-                        <input type="submit" name="submit" class="input-lg" />
+                        <input type="submit" name="submit" class="input-lg" value="Toevoegen" />
                     </div>
                 </div>
                
