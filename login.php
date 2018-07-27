@@ -78,10 +78,11 @@ body, html {
 
 
 <div class="container">
-    <h1>Logonpage</h1>
+    
 
-    <form method="post" action="" >
+    
     <div class="row logonbox">
+    <form method="post" action="" >
         <div class=" col-12">
             <div class="row buffer">
                 <div class="col-sm-12 col-md-6"><input type="text" placeholder="Username" name="username" class="form-control input-lg"  autofocus/></div>
@@ -93,8 +94,9 @@ body, html {
                 <div class="col-sm-12 col-md-6"><input type="submit" name="submit"  value="Logon" /></div>
             </div>
         </div>
+        </form>
     </div>
-    </form>
+    
 
 
 </div>
