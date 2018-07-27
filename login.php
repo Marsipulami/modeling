@@ -81,7 +81,7 @@ body, html {
     <h1>Logonpage</h1>
 
     <form method="post" action="" >
-    <div class="row">
+    <div class="row logonbox">
         <div class=" col-12">
             <div class="row buffer">
                 <div class="col-sm-12 col-md-6"><input type="text" placeholder="Username" name="username" class="form-control input-lg"  autofocus/></div>
