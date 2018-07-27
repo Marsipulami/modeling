@@ -62,13 +62,13 @@
     <form method="post" action="" >
     <div class="row">
         <div class=" col-sm-12">
-            <div class="row">
+            <div class="row buffer">
                 <div class="col-sm-12 col-md-6"><input type="text" placeholder="Username" name="username" class="form-control input-lg"  autofocus/></div>
             </div>
-            <div class="row">
+            <div class="row buffer">
                 <div class=" col-sm-12 col-md-6"><input type="password" placeholder="Password" name="password" class="form-control input-lg" /></div>
             </div>
-            <div class="row">
+            <div class="row buffer">
                 <div class="col-sm-12 col-md-6"><input type="submit" name="submit"  value="Logon" /></div>
             </div>
         </div>
