@@ -7,7 +7,7 @@ session_start();
 
 ?>
 
-
+test
 <?php
 
   include("includes/header.inc.php");
