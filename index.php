@@ -7,7 +7,7 @@ session_start();
 
 ?>
 
-kartet
+kartetssssssssssssssssssssss
 <?php
 
   include("includes/header.inc.php");
