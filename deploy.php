@@ -21,10 +21,10 @@
         {
                 $headers[$headername] = $headervalue;
         }
-        // if (!array_key_exists("X-Gitlab-Token", $headers))
-        // {
-        //         die ("Naughty boy! :)");
-        // }
+        if (!array_key_exists("X-Hub-Signature", $headers))
+        {
+                die ("Naughty boy! :)");
+        }
 
         // The commands
         $commands = array(
