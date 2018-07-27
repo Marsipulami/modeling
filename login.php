@@ -56,7 +56,28 @@
 
 <body>
 
-<div class="container">
+<style>
+body, html {
+    height: 100%;
+}
+
+.bg { 
+    /* The image used */
+    background-image: url("images/bg.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+</style>
+
+
+<div class="container bg">
     <h1>Logonpage</h1>
 
     <form method="post" action="" >
