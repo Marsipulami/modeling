@@ -5,7 +5,7 @@ function dbConnect()
 	
 	$pass = null;
 	$db = null;
-
+test
 	
 	try {
 		$conn = new PDO('mysql:host=localhost;dbname='.$db, $db, base64_decode($pass));
