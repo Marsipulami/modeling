@@ -51,7 +51,7 @@ body, html {
             $Qry->execute(array(':userID'=>$result['users_id'], ':currentdate'=>time()));
 
 
-            Log::addLogEntry($db_link, $_SESSION['usersid'], "User ".$_SESSION['username'] . " has logged");
+            Log::addLogEntry($db_link, $_SESSION['usersid'], "User ".$_SESSION['username'] . " has logged in");
 
             header('Location: /');
 

@@ -37,6 +37,13 @@ include("includes/menu.inc.php");
     
     
     </div>
+
+    <div class="col-8 col-lg-4">
+    
+    <!-- <?php include("activity.php"); ?> -->
+  
+  
+  </div>
  
  
   </div>
