@@ -21,11 +21,11 @@ session_start();
 
 
 
-    $qry = $db_link->prepare("SELECT * FROM logging");
+    $qry = $db_link->prepare("SELECT * FROM logging ORDER By timestamp DESC ");
     $qry->execute();
     $brands = null;
     while($row = $qry->fetch()) {
-        echo $row['logvalue'] . "<br />";
+        echo $row['timestamp'] .  " " .  $row['logvalue'] . "<br />";
     }    
 
 ?>
