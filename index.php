@@ -40,7 +40,7 @@ include("includes/menu.inc.php");
 
     <div class="col-8 col-lg-4">
     
-    <!-- <?php include("activity.php"); ?> -->
+    <!-- <?php //include("activity.php"); ?> -->
   
   
   </div>
