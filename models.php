@@ -117,10 +117,10 @@ include_once("includes/addPhoto.inc.php");
 
             try{
                 $photoupload = new Photo($_FILES,$_GET['used_model'],$db_link);
-                Log::addLogEntry($db_link, "User ".$_SESSION['username'] . " added photo to model.");
+                Log::addLogEntry($db_link, $_SESSION['usersid'], "User ".$_SESSION['username'] . " added photo to model.");
                 echo '<div class="alert alert-success tempalert">Foto upload geslaagd.</div>';
             }catch(Exception $e){
-                Log::addLogEntry($db_link, "User ".$_SESSION['username'] . " ".$e->getMessage());
+                Log::addLogEntry($db_link, $_SESSION['usersid'], "User ".$_SESSION['username'] . " ".$e->getMessage());
                 echo '<div class="alert alert-danger">'.$e->getMessage().'</div>';
                 
             }
@@ -134,10 +134,10 @@ include_once("includes/addPhoto.inc.php");
                 $qry->execute(array(':comment'=>$_POST['beschrijving'], 
                                     ':paintid'=>$_POST['color'],
                                     ':umid'=>$_GET['used_model']));
-                Log::addLogEntry($db_link, "User ".$_SESSION['username'] . " added Color to model.");
+                Log::addLogEntry($db_link, $_SESSION['usersid'], "User ".$_SESSION['username'] . " added Color to model.");
                 echo '<div class="alert alert-success tempalert">Kleur bijgevoegd aan model</div>';
             }catch(Exeception $e)    {
-                Log::addLogEntry($db_link, "User ".$_SESSION['username'] . " ".$e->getMessage());
+                Log::addLogEntry($db_link, $_SESSION['usersid'], "User ".$_SESSION['username'] . " ".$e->getMessage());
                 echo '<div class="alert alert-danger">'.$e->getMessage().'</div>';
             }
            
@@ -152,10 +152,10 @@ include_once("includes/addPhoto.inc.php");
                 $qry->execute(array(':comments'=>$_POST['comments'], 
                                     ':userID'=>$_SESSION['usersid'],
                                     ':umid'=>$_GET['used_model']));
-                Log::addLogEntry($db_link, "User ".$_SESSION['username'] . " changed comments on model.");                   
+                Log::addLogEntry($db_link, $_SESSION['usersid'], "User ".$_SESSION['username'] . " changed comments on model.");                   
                 echo '<div class="alert alert-success tempalert">Comments bijgewerkt.</div>';
             }catch(Exeception $e)    {
-                Log::addLogEntry($db_link, "User ".$_SESSION['username'] . " ".$e->getMessage());
+                Log::addLogEntry($db_link, $_SESSION['usersid'], "User ".$_SESSION['username'] . " ".$e->getMessage());
                 echo '<div class="alert alert-danger">'.$e->getMessage().'</div>';
             }
         }
@@ -175,7 +175,7 @@ include_once("includes/addPhoto.inc.php");
                 $image_qry = $db_link->prepare("DELETE FROM users_models_images WHERE umg_id = :umgID");
 
                 $image_qry->execute(array(':umgID'=>$_GET['imageToBeDeleted']));
-                Log::addLogEntry($db_link, "User ".$_SESSION['username'] . " deleted image.");
+                Log::addLogEntry($db_link, $_SESSION['usersid'], "User ".$_SESSION['username'] . " deleted image.");
                 echo '<div class="alert alert-success tempalert">Foto verwijderd.</div>';
             }else{
                 echo '<div class="alert alert-danger">Er is iets fout gegaan bij het verwijderen.</div>';
@@ -199,10 +199,10 @@ include_once("includes/addPhoto.inc.php");
                 try{                
                 $delete = $db_link->prepare("DELETE FROM users_models_colors WHERE umc_id = :umcID");
                 $delete->execute(array(':umcID'=>$row['umc_id']));
-                Log::addLogEntry($db_link, "User ".$_SESSION['username'] . " deleted Color to model.");
+                Log::addLogEntry($db_link, $_SESSION['usersid'], "User ".$_SESSION['username'] . " deleted Color to model.");
                 echo '<div class="alert alert-success tempalert">Kleur bij model verwijderd</div>';
                 }catch(Exeception $e)    {
-                    Log::addLogEntry($db_link, "User ".$_SESSION['username'] . " ".$e->getMessage());
+                    Log::addLogEntry($db_link, $_SESSION['usersid'], "User ".$_SESSION['username'] . " ".$e->getMessage());
                     echo '<div class="alert alert-danger">'.$e->getMessage().'</div>';
                 }
             }
@@ -226,7 +226,7 @@ include_once("includes/addPhoto.inc.php");
                 $qry->execute(array(':userID'=>$_SESSION['usersid'],':umID'=>$_GET['used_model']));
                 if($qry->rowCount() == 0) throw new Exception("Er zijn geen resultaten gevonden");
             }catch(Exception $e){
-                Log::addLogEntry($db_link, "User ".$_SESSION['username'] . " ".$e->getMessage());
+                Log::addLogEntry($db_link, $_SESSION['usersid'], "User ".$_SESSION['username'] . " ".$e->getMessage());
                 echo '<div class="alert alert-danger">'.$e->getMessage().'</div>';
                 die();
             }

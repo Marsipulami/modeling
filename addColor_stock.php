@@ -36,7 +36,7 @@ session_start();
             $qry = $db_link->prepare("UPDATE paintdatabase.users_colors SET stock= :stock WHERE users_colors.paints_id= :paintID");
             $qry->execute(array(':stock'=>$newstock, 
                                 ':paintID'=>$current->paints_id));
-            Log::addLogEntry($db_link, "User ".$_SESSION['username'] . " changed stock.");
+            Log::addLogEntry($db_link, $_SESSION['usersid'], "User ".$_SESSION['username'] . " changed stock.");
             echo '<div class="alert alert-success">Kleur toegevoegd aan reeds bestaande voorraad.</div>';
         }else{
             //insert
@@ -46,7 +46,7 @@ session_start();
             $qry->execute(array(':userID'=>$_SESSION['usersid'], 
                                     ':colorID'=>$_POST['color'],
                                         ':stock'=>$_POST['number']));
-            Log::addLogEntry($db_link, "User ".$_SESSION['username'] . " added Color to stock.");
+            Log::addLogEntry($db_link, $_SESSION['usersid'], "User ".$_SESSION['username'] . " added Color to stock.");
             echo '<div class="alert alert-success">Kleur toegevoegd aan persoonlijke voorraad.</div>';
         }
         
