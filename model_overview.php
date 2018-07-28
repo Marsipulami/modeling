@@ -69,7 +69,7 @@ $qry->execute(array(':userID' => $_SESSION['usersid']));
 
 if ($qry->rowCount() == 0) {
 
-    echo "Nog geen modellen ingevoerd";
+    echo "Nog geen gedeelde modellen bij anderen ingevoerd";
 
 }
             // echo '<pre>';
