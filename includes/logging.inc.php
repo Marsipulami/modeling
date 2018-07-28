@@ -3,7 +3,7 @@
 
 class Log{
 
-    public static function addLogEntry($sqlSession, $logMessage, $userid){
+    public static function addLogEntry($sqlSession, $userid, $logMessage){
 
         $qry = $sqlSession->prepare("INSERT INTO logging (logvalue, usersid) 
         VALUES (:logentry, :userId)");
