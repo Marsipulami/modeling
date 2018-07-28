@@ -30,6 +30,7 @@ include_once("includes/sessioncheck.inc.php");
 
             if($res){
                 echo '<div class="alert alert-success">Gebruikersnaam aangepast.</div>';
+                Log::addLogEntry($db_link, "User ".$_SESSION['username'] . " changed username in ".htmlentities($_POST['username']));
                 $_SESSION['username'] = htmlentities($_POST['username']);
             }
 
@@ -47,6 +48,7 @@ include_once("includes/sessioncheck.inc.php");
                                 ':userid'=>$_SESSION['usersid']));
 
                                 if($res){
+                                    Log::addLogEntry($db_link, "User ".$_SESSION['username'] . " changed password");
                                     echo '<div class="alert alert-success">Wachtwoord aangepast.</div>';
                                 }
                 }
