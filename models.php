@@ -271,8 +271,11 @@ include_once("includes/addPhoto.inc.php");
                              echo '<div class="col-6">';    
                                 echo '<input type="checkbox" id="share" data-toggle="toggle" class="form-control" data-on="Shared" data-off="Private" disabled />';
                             echo '</div>';
-                            echo '<div class="col-6">';
-                                echo '<div id="savemessage" ></div>';    
+                            echo '<div class="col-1">';
+                                echo '<div id="savemessage" ></div>'; 
+                            echo '</div>';
+                            echo '<div class="col-5">';
+                                   
                                 echo '<button type="submit" class="btn btn-primary btn-sm">Opslaan</button>';
                             echo '</div>';
                         echo '</div>';
