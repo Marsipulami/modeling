@@ -145,11 +145,12 @@ include_once("includes/addPhoto.inc.php");
         }
 
 
-        if(isset($_GET['used_model']) && isset($_GET['editcomments']) && isset($_POST['comments'])){
+        if(isset($_GET['used_model']) && isset($_GET['editcomments']) && isset($_POST[' '])){
            
             try{
-                $qry = $db_link->prepare("UPDATE paintdatabase.users_models SET comments= :comments WHERE users_models.user_id = :userID AND um_id= :umid");
+                $qry = $db_link->prepare("UPDATE paintdatabase.users_models SET shared= :shared AND comments= :comments WHERE users_models.user_id = :userID AND um_id= :umid");
                 $qry->execute(array(':comments'=>$_POST['comments'], 
+                                    ':shared'=>$_POST['share'], 
                                     ':userID'=>$_SESSION['usersid'],
                                     ':umid'=>$_GET['used_model']));
                 Log::addLogEntry($db_link, $_SESSION['usersid'], "User ".$_SESSION['username'] . " changed comments on model.");                   
@@ -271,9 +272,9 @@ include_once("includes/addPhoto.inc.php");
                         echo '<div class="row">';
                              echo '<div class="col-6">';   
                             if($_SESSION['usersid'] == $row['user_id']) {
-                                echo '<input type="checkbox" id="share" data-toggle="toggle" class="form-control" data-on="Shared" data-off="Private" disabled />';
+                                echo '<input type="checkbox" id="share" name="share" data-toggle="toggle" class="form-control" data-on="Shared" data-off="Private" disabled />';
                             }else{
-                                echo '<input type="checkbox" id="share" data-toggle="toggle" class="form-control" data-on="Shared" data-off="Private" disabled checked  />';
+                                echo '<input type="checkbox" id="share" name="share"  data-toggle="toggle" class="form-control" data-on="Shared" data-off="Private" disabled checked  />';
                             }
                             echo '</div>';
                             echo '<div class="col-1">';
