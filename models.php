@@ -221,7 +221,7 @@ include_once("includes/addPhoto.inc.php");
                 $qry = $db_link->prepare("SELECT comments,brand,model_date,prodnumber,scale,name,users_models.um_id FROM users_models,models,brands WHERE models.models_brand=brands.id 
                                                                                             AND users_models.model_id = models_id 
                                                                                         
-                                                                                            AND users_models.user_id= :userID
+                                                                                            AND (users_models.user_id= :userID or users_models.shared=1)
                                                                                                 AND users_models.um_id= :umID");
                 $qry->execute(array(':userID'=>$_SESSION['usersid'],':umID'=>$_GET['used_model']));
                 if($qry->rowCount() == 0) throw new Exception("Er zijn geen resultaten gevonden");
