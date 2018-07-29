@@ -51,23 +51,24 @@ include("includes/menu.inc.php");
 
   <div class="row">
     <div class="col-8 col-lg-8">
-
+    <br /><br />
       <h3>Features</h3>
 
 
-      #Account Features:
-
-Change password
-#Color
-
-Add Vallejo colors to personal stock
-Choose from all Vallejo colors on the market
-#Model
-
-Create your model project
-Assign used colors to the project
-Upload photos during youre project
-Share project with other members
+      #Account Features: <br />
+      <br />
+Change password<br />
+#Color<br />
+<br />
+Add Vallejo colors to personal stock<br />
+Choose from all Vallejo colors on the market<br />
+#Model<br />
+<br />
+Create your model project<br />
+Assign used colors to the project<br />
+Upload photos during youre project<br />
+Share project with other members<br />
+<br />
 
     </div>
   </div>
