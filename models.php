@@ -148,6 +148,7 @@ include_once("includes/addPhoto.inc.php");
         if(isset($_GET['used_model']) && isset($_GET['editcomments']) && isset($_POST[' '])){
            
             try{
+                var_dump($_POST);
                 $qry = $db_link->prepare("UPDATE paintdatabase.users_models SET shared= :shared AND comments= :comments WHERE users_models.user_id = :userID AND um_id= :umid");
                 $qry->execute(array(':comments'=>$_POST['comments'], 
                                     ':shared'=>$_POST['share'], 
@@ -272,7 +273,7 @@ include_once("includes/addPhoto.inc.php");
                         echo '<div class="row">';
                              echo '<div class="col-6">';   
                             if($_SESSION['usersid'] == $row['user_id']) {
-                                echo '<input type="checkbox" id="share" name="share" data-toggle="toggle" class="form-control" data-on="Shared" data-off="Private" disabled />';
+                                echo '<input type="checkbox" id="share" name="share" data-toggle="toggle" class="form-control" data-on="Shared" data-off="Private" />';
                             }else{
                                 echo '<input type="checkbox" id="share" name="share"  data-toggle="toggle" class="form-control" data-on="Shared" data-off="Private" disabled checked  />';
                             }
