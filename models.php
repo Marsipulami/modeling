@@ -299,7 +299,7 @@ include_once("includes/addPhoto.inc.php");
                                                                                                 users_models_colors.um_id=users_models.um_id
                                                                                             AND users_models_colors.paints_id=colors.color_id
                                                                                             AND colors.brands_id=brands.id
-                                                                                            AND users_models.user_id= :userID
+                                                                                            
                                                                                                 AND users_models.um_id= :umID");
                                 $qry->execute(array(':userID'=>$_SESSION['usersid'],':umID'=>$_GET['used_model']));
                                 if($qry->rowCount() > 0){
