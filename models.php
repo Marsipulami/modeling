@@ -160,7 +160,7 @@ include_once("includes/addPhoto.inc.php");
 
                 $qry = $db_link->prepare("UPDATE paintdatabase.users_models SET shared= :shared AND comments= :comments WHERE users_models.user_id = :userID AND um_id= :umid");
                 $qry->execute(array(':comments'=>$_POST['comments'], 
-                                    ':shared'=>$_POST['share'], 
+                                    ':shared'=>$share, 
                                     ':userID'=>$_SESSION['usersid'],
                                     ':umid'=>$_GET['used_model']));
                 Log::addLogEntry($db_link, $_SESSION['usersid'], "User ".$_SESSION['username'] . " changed comments on model.");                   
