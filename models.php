@@ -95,7 +95,7 @@ include_once("includes/addPhoto.inc.php");
 
 
                     });
-
+                    
                     $('.img-wrap .close').on('click', function() {
                         var id = $(this).closest('.img-wrap').find('img').data('id');
                         // alert('remove picture: ' + id);
@@ -330,9 +330,12 @@ include_once("includes/addPhoto.inc.php");
                                                 echo '<span style="border:1px solid black; background-color: #'.$row['rgb'].'" >&nbsp;&nbsp;&nbsp;&nbsp; </span>';
                                             echo '</div>';
                                             echo '<div class="col-1 col-lg-1">';
+                                            if($_SESSION['usersid'] == $row['user_id']){
                                                 echo '<button type="button" class="close" aria-label="Close">
                                                 <a href="models.php?used_model='.$row['um_id'].'&deleteColor='.$row['umc_id'].'" ><span aria-hidden="true">&times;</span></a>
+                                            
                                             </button>';
+                                            }
                                             echo '</div>';
                                         
                                         
@@ -422,8 +425,11 @@ include_once("includes/addPhoto.inc.php");
                             echo '<div class="col">';
                                 echo '<div class="row">';
                                     echo '<div class="col">';
-                                   
+                                    if($_SESSION['usersid'] == $row['user_id']){
                                         echo '<div class="img-wrap">';
+                                    }else{
+                                        echo '<div>';
+                                    }
                                             echo '<span class="close">&times;</span>';
                                             
                                             echo '<a href="'.$imagerow['image_path'] .'" data-lightbox="roadtrip"><img class="show_case "  src='.$imagerow['image_path'] .' data-id="'.$imagerow['umg_id'].'" /></a>';
