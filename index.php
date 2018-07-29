@@ -57,11 +57,11 @@ include("includes/menu.inc.php");
 
       #Account Features: <br />
       <br />
-Change password<br />
+Change password<br /><br />
 #Color<br />
 <br />
 Add Vallejo colors to personal stock<br />
-Choose from all Vallejo colors on the market<br />
+Choose from all Vallejo colors on the market<br /><br />
 #Model<br />
 <br />
 Create your model project<br />
