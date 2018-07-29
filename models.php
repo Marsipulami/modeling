@@ -427,10 +427,11 @@ include_once("includes/addPhoto.inc.php");
                                     echo '<div class="col">';
                                     if($_SESSION['usersid'] == $row['user_id']){
                                         echo '<div class="img-wrap">';
+                                        echo '<span class="close">&times;</span>';
                                     }else{
                                         echo '<div>';
                                     }
-                                            echo '<span class="close">&times;</span>';
+                                           
                                             
                                             echo '<a href="'.$imagerow['image_path'] .'" data-lightbox="roadtrip"><img class="show_case "  src='.$imagerow['image_path'] .' data-id="'.$imagerow['umg_id'].'" /></a>';
                                            
