@@ -301,7 +301,7 @@ include_once("includes/addPhoto.inc.php");
                                                                                             AND colors.brands_id=brands.id
                                                                                             
                                                                                                 AND users_models.um_id= :umID");
-                                $qry->execute(array(':userID'=>$_SESSION['usersid'],':umID'=>$_GET['used_model']));
+                                $qry->execute(array(':umID'=>$_GET['used_model']));
                                 if($qry->rowCount() > 0){
                                     while($row = $qry->fetch()) {
                                         echo '<div class="row " >';
@@ -402,9 +402,9 @@ include_once("includes/addPhoto.inc.php");
 
                 $image_qry = $db_link->prepare("SELECT image_path,umg_id,upload_date FROM users_models,users_models_images WHERE users_models.um_id = users_models_images.um_id
                                                                                         
-                                                                                            AND users_models.user_id= :userID
+                                                                                            
                                                                                                 AND users_models.um_id= :umID");
-                $image_qry->execute(array(':userID'=>$_SESSION['usersid'],':umID'=>$_GET['used_model']));
+                $image_qry->execute(array(':umID'=>$_GET['used_model']));
                 echo '<div class="row top-buffer">';
                 if($image_qry->rowCount() == 0){
                     //geen images
