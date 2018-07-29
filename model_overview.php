@@ -76,17 +76,20 @@ if ($qry->rowCount() == 0) {
 while ($row = $qry->fetch()) {
     echo '
             <div class="row buffer">';
+            echo '<div class="col-10">';
             echo '<a href="models.php?used_model='.$row['um_id'].'" >';
-    echo '<div class="col-1">';
-    echo '<img class="logo_small" src="' . $row['imagepath'] . '" >';
-    echo '</div>';
-    echo '<div class="hidden-xs-down col-2">';
-    echo $row['brand'];
-    echo '</div>';
-    echo '<div class="col-9">';
-    echo $row['name'];
-    echo '</div>';
+                echo '<div class="row"><div class="col-1">';
+                echo '<img class="logo_small" src="' . $row['imagepath'] . '" >';
+                echo '</div>';
+                echo '<div class="hidden-xs-down col-2">';
+                echo $row['brand'];
+                echo '</div>';
+                echo '<div class="col-9">';
+                echo $row['name'];
+                echo '</div></div>';
+           
             echo '</a>';
+            echo '</div>';
 
 
 
