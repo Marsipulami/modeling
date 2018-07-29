@@ -148,7 +148,6 @@ include_once("includes/addPhoto.inc.php");
         if(isset($_GET['used_model']) && isset($_GET['editcomments']) && isset($_POST['comments'])){
            
             try{
-                var_dump($_POST);
                 $share = $_POST['share'];
                 if($share == "on"){
                     $share = "1";
@@ -229,7 +228,7 @@ include_once("includes/addPhoto.inc.php");
         }else{
             // echo '<pre>';
             try{
-                $qry = $db_link->prepare("SELECT users_models.user_id,comments,brand,model_date,prodnumber,scale,name,users_models.um_id FROM users_models,models,brands WHERE models.models_brand=brands.id 
+                $qry = $db_link->prepare("SELECT shared, users_models.user_id,comments,brand,model_date,prodnumber,scale,name,users_models.um_id FROM users_models,models,brands WHERE models.models_brand=brands.id 
                                                                                             AND users_models.model_id = models_id 
                                                                                         
                                                                                             AND (users_models.user_id= :userID or users_models.shared=1)
@@ -281,10 +280,15 @@ include_once("includes/addPhoto.inc.php");
                         echo '</div>';
                         echo '<div class="row">';
                              echo '<div class="col-6">';   
-                            if($_SESSION['usersid'] == $row['user_id']) {
-                                echo '<input type="checkbox" id="share" name="share" data-toggle="toggle" class="form-control" data-on="Shared" data-off="Private" />';
+                            if($row['shared'] == "1"){
+                                $checked = "checked";
                             }else{
-                                echo '<input type="checkbox" id="share" name="share"  data-toggle="toggle" class="form-control" data-on="Shared" data-off="Private" disabled checked  />';
+                                $checked = "";
+                            }
+                            if($_SESSION['usersid'] == $row['user_id']) {
+                                echo '<input type="checkbox" id="share" name="share" data-toggle="toggle" class="form-control" data-on="Shared" data-off="Private" '.$checked.' />';
+                            }else{
+                                echo '<input type="checkbox" id="share" name="share"  data-toggle="toggle" class="form-control" data-on="Shared" data-off="Private" disabled '.$checked.'  />';
                             }
                             echo '</div>';
                             echo '<div class="col-1">';
