@@ -218,7 +218,7 @@ include_once("includes/addPhoto.inc.php");
         }else{
             // echo '<pre>';
             try{
-                $qry = $db_link->prepare("SELECT comments,brand,model_date,prodnumber,scale,name,users_models.um_id FROM users_models,models,brands WHERE models.models_brand=brands.id 
+                $qry = $db_link->prepare("SELECT users_models.user_id,comments,brand,model_date,prodnumber,scale,name,users_models.um_id FROM users_models,models,brands WHERE models.models_brand=brands.id 
                                                                                             AND users_models.model_id = models_id 
                                                                                         
                                                                                             AND (users_models.user_id= :userID or users_models.shared=1)
@@ -257,6 +257,7 @@ include_once("includes/addPhoto.inc.php");
                 echo '<div class="row top-buffer">';
 
                     echo '<div class="col-12">';
+                    if($_SESSION['usersid'] == $row['user_id'])
                     echo '<form method="post" action="models.php?used_model='.$_GET['used_model'].'&editcomments=true">';
                         echo '<div class="row">';
                 
@@ -275,11 +276,12 @@ include_once("includes/addPhoto.inc.php");
                                 echo '<div id="savemessage" ></div>'; 
                             echo '</div>';
                             echo '<div class="col-5">';
-                                   
-                                echo '<button type="submit" class="btn btn-primary btn-sm">Opslaan</button>';
+                                 if($_SESSION['usersid'] == $row['user_id'])
+                                    echo '<button type="submit" class="btn btn-primary btn-sm">Opslaan</button>';
                             echo '</div>';
                         echo '</div>';
-                    echo '</form>';
+                    if($_SESSION['usersid'] == $row['user_id'])
+                        echo '</form>';
                     echo '</div>';
                 echo '</div>';
 
@@ -295,7 +297,7 @@ include_once("includes/addPhoto.inc.php");
                                
                                 echo '<h4>Gebruikte kleuren</h4>';
                                 echo '<br />';
-                                $qry = $db_link->prepare("SELECT umc_id,users_models_colors.comment,users_models.um_id,imagepath,color_id,color_name,rgb,brand FROM users_models,users_models_colors,colors,brands WHERE 
+                                $qry = $db_link->prepare("SELECT users_models.user_id,umc_id,users_models_colors.comment,users_models.um_id,imagepath,color_id,color_name,rgb,brand FROM users_models,users_models_colors,colors,brands WHERE 
                                                                                                 users_models_colors.um_id=users_models.um_id
                                                                                             AND users_models_colors.paints_id=colors.color_id
                                                                                             AND colors.brands_id=brands.id
@@ -368,6 +370,7 @@ include_once("includes/addPhoto.inc.php");
                             
                             </script>';
 
+                            if($_SESSION['usersid'] == $row['user_id']){
                             echo '<div class="row top-buffer"><div class="col-sm-4 col-lg-4">
                                     <input type="text" class="colorobject-multiple form-control"  name="color"  required/>    
                                 </div>
@@ -378,7 +381,7 @@ include_once("includes/addPhoto.inc.php");
                                  <input type="submit" class="btn btn-primary btn-sm"  name="submitColor" value="Voeg kleur toe" />    
                                 </div></div>';
 
-
+                            }
 
 
 
@@ -400,7 +403,7 @@ include_once("includes/addPhoto.inc.php");
 
 
 
-                $image_qry = $db_link->prepare("SELECT image_path,umg_id,upload_date FROM users_models,users_models_images WHERE users_models.um_id = users_models_images.um_id
+                $image_qry = $db_link->prepare("SELECT users_models.user_id,image_path,umg_id,upload_date FROM users_models,users_models_images WHERE users_models.um_id = users_models_images.um_id
                                                                                         
                                                                                             
                                                                                                 AND users_models.um_id= :umID");
@@ -442,6 +445,7 @@ include_once("includes/addPhoto.inc.php");
                 echo '</div>';
                 echo '<div class="row top-buffer">';
                 echo '<div class="col">';
+                         if($_SESSION['usersid'] == $row['user_id'])
                                 echo '<form method="post" action="models.php?used_model='.$_GET['used_model'].'&action=uploadfile" enctype="multipart/form-data" >';
                                 
                                
@@ -454,9 +458,9 @@ include_once("includes/addPhoto.inc.php");
                                     <input type="text" class="form-control" readonly>
                                     </div> ';
                                    
-                                    
+                            if($_SESSION['usersid'] == $row['user_id'])    
                                     echo '<input type="submit" class="buffer btn btn-primary btn-sm" name="submitPhoto" class="input-lg" value="Foto uploaden" />';
-
+                            if($_SESSION['usersid'] == $row['user_id'])
                                 echo '</form>';
                             echo '</div>';
                 echo '</div>';
