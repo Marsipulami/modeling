@@ -269,8 +269,12 @@ include_once("includes/addPhoto.inc.php");
                             echo '</div>';
                         echo '</div>';
                         echo '<div class="row">';
-                             echo '<div class="col-6">';    
+                             echo '<div class="col-6">';   
+                            if($_SESSION['usersid'] == $row['user_id']) {
                                 echo '<input type="checkbox" id="share" data-toggle="toggle" class="form-control" data-on="Shared" data-off="Private" disabled />';
+                            }else{
+                                echo '<input type="checkbox" id="share" data-toggle="toggle" class="form-control" data-on="Shared" data-off="Private" disabled checked  />';
+                            }
                             echo '</div>';
                             echo '<div class="col-1">';
                                 echo '<div id="savemessage" ></div>'; 
@@ -445,7 +449,7 @@ include_once("includes/addPhoto.inc.php");
                 echo '</div>';
                 echo '<div class="row top-buffer">';
                 echo '<div class="col">';
-                         if($_SESSION['usersid'] == $row['user_id'])
+                         if($_SESSION['usersid'] == $row['user_id']){
                                 echo '<form method="post" action="models.php?used_model='.$_GET['used_model'].'&action=uploadfile" enctype="multipart/form-data" >';
                                 
                                
@@ -458,10 +462,11 @@ include_once("includes/addPhoto.inc.php");
                                     <input type="text" class="form-control" readonly>
                                     </div> ';
                                    
-                            if($_SESSION['usersid'] == $row['user_id'])    
+                            
                                     echo '<input type="submit" class="buffer btn btn-primary btn-sm" name="submitPhoto" class="input-lg" value="Foto uploaden" />';
-                            if($_SESSION['usersid'] == $row['user_id'])
+                            
                                 echo '</form>';
+                         }
                             echo '</div>';
                 echo '</div>';
                 // var_dump($row);
