@@ -55,14 +55,14 @@ include("includes/menu.inc.php");
       <h3>Features</h3>
 
 
-      <h2>Account Features: </h2>
+      <h4>Account Features: </h4>
       <br />
 Change password<br /><br />
-<h2>Color</h2>
+<h4>Color</h4>
 <br />
 Add Vallejo colors to personal stock<br />
 Choose from all Vallejo colors on the market<br /><br />
-<h2>Model</h2>
+<h4>Model</h4>
 <br />
 Create your model project<br />
 Assign used colors to the project<br />
