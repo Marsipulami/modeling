@@ -145,7 +145,7 @@ include_once("includes/addPhoto.inc.php");
         }
 
 
-        if(isset($_GET['used_model']) && isset($_GET['editcomments']) && isset($_POST[' '])){
+        if(isset($_GET['used_model']) && isset($_GET['editcomments']) && isset($_POST['comments'])){
            
             try{
                 var_dump($_POST);
