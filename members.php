@@ -71,7 +71,7 @@ if(!isset($_SESSION)) session_start();
         echo '</div>
 
 
-        <div class="col-3">
+        <div class="col-3 top-buffer">
 
             <table>
                 <tr><td>Naam:</td><td><input type="text" /></td></tr>
