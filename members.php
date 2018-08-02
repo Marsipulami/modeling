@@ -26,8 +26,8 @@ if(!isset($_SESSION)) session_start();
 
             var_dump($_POST);
             try{
-                $qry = $db_link->prepare("INSERT INTO users (users_name,users_password,email,rol) VALUES 
-                                                                                                    (:users_name, :users_password, :email, 0)");
+                $qry = $db_link->prepare("INSERT INTO users (users_id,users_name,users_password,email,role,last_login) VALUES 
+                                                                                                    (NULL,:users_name, :users_password, :email, 0,0)");
 
                 echo $qry->queryString;
 
