@@ -28,11 +28,13 @@ if(!isset($_SESSION)) session_start();
             try{
                 $qry = $db_link->prepare("INSERT INTO users (users_id,users_name,users_password,email,role) VALUES 
                                                                                                     (NULL, :users_name, :users_password, :email, 0)");
+
+                echo $qry->queryString();
                 $qry->execute(array(':user_name'=>$_POST['username'], 
                                     ':users_password'=>substr(0,10,md5(time())),
                                     ':email'=>$_POST['mail']));
 
-                echo $qry->queryString();
+                
                 Log::addLogEntry($db_link, $_SESSION['usersid'], "User ".htmlentities($_POST['username']) . " added to database.");
                 echo '<div class="alert alert-success tempalert">Gebruiker toegevoegd en mail verstuurd.</div>';
             }catch(PDOException  $e)    {
