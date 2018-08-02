@@ -71,11 +71,12 @@ if(!isset($_SESSION)) session_start();
         echo '</div>
 
 
-        <div class="col-3 top-buffer">
+        <div class="col-3" style="padding-top:50px">
 
             <table>
-                <tr><td>Naam:</td><td><input type="text" /></td></tr>
-                <tr><td>Email:</td><td><input type="text" /></td></tr>
+                <tr><td>Naam:</td><td><input class="form-control" type="text" /></td></tr>
+                <tr><td>Email:</td><td><input class="form-control" type="text" /></td></tr>
+                <tr><td></td><td><input type="submit" value="Toevoegen" class="btn btn-primary btn-sm" /></td></tr>
             </table>
         </div>
 
