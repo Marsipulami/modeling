@@ -22,7 +22,18 @@ if(!isset($_SESSION)) session_start();
             die('<div class="alert alert-danger">Onvoldoende rechten.</div>');
         }
 
-        if(isset($_POST['add_user'])){
+
+
+
+
+        if(isset($_GET['deleteUser'])){
+        
+            echo "User verwijderen";
+            
+
+        }
+        
+           if(isset($_POST['add_user'])){
 
             
             try{
@@ -65,6 +76,7 @@ if(!isset($_SESSION)) session_start();
             <th scope="col">Name</th>
             <th scope="col">Role</th>
             <th scope="col">Last Login</th>
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody>';
@@ -77,6 +89,7 @@ if(!isset($_SESSION)) session_start();
             <td>'.$row['users_name'].'</td>
             <td>'.$row['role'].'</td>
             <td>'.date("d-M-Y G:i:s", $row['last_login']).'</td>
+            <td><a href="?deleteUser="'.$row['users_id'].'">Delete</a></td>
                 </tr>';
 
 
