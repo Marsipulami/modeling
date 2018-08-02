@@ -27,37 +27,43 @@ if(!isset($_SESSION)) session_start();
         $qry = $db_link->prepare("SELECT * FROM users");
         $qry->execute(array());
 
-
+        echo '<div class="container">';
+        echo '<div class="row top-buffer">';
+            echo '<div class="col-12">';
 
 
         echo '<table class="table">
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Name</th>
+            <th scope="col">Role</th>
+            <th scope="col">Last Login</th>
           </tr>
         </thead>
         <tbody>';
 
-
+        $count = 1;
         while($row = $qry->fetch()) {
 
             echo '<tr>
-            <th scope="row">1</th>
+            <th scope="row">'.$count.'</th>
             <td>'.$row['users_name'].'</td>
             <td>'.$row['role'].'</td>
             <td>'.date("d-M-Y", $row['last_login']).'</td>
                 </tr>';
 
 
+            $count++;
+
         }
         
         echo ' </tbody>
         </table>';
         
-
+        echo '</div>
+        </div>
+        </div>';
         
 
     ?>
