@@ -22,10 +22,23 @@ if(!isset($_SESSION)) session_start();
             die('<div class="alert alert-danger">Onvoldoende rechten.</div>');
         }
 
-        if(isset($_POST['save'])){
+        if(isset($_POST['add_user'])){
 
-            // var_dump($_POST);
+            var_dump($_POST);
+            try{
+                $qry = $db_link->prepare("INSERT INTO users (users_name,users_password,email) VALUES 
+                                                                                                    (:users_name, :users_password, :email)");
+                $qry->execute(array(':user_name'=>$_POST['username'], 
+                                    ':users_password'=>substr(0,10,md5(time())),
+                                    ':email'=>$_POST['mail']));
 
+                
+                Log::addLogEntry($db_link, $_SESSION['usersid'], "User ".htmlentities($_POST['username']) . " added to database.");
+                echo '<div class="alert alert-success tempalert">Gebruiker toegevoegd en mail verstuurd.</div>';
+            }catch(Exeception $e)    {
+                Log::addLogEntry($db_link, $_SESSION['usersid'], "User ".$_SESSION['username'] . " ".$e->getMessage());
+                echo '<div class="alert alert-danger">'.$e->getMessage().'</div>';
+            }
            
         }
         
