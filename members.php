@@ -8,6 +8,13 @@ if(!isset($_SESSION)) session_start();
 
 
         ?>
+<script>
+        $(document).ready(function () {
+             $('#membertable').DataTable();
+             $('.dataTables_length').addClass('bs-select');
+        });
+
+</script>
        
         <?php
 
@@ -32,7 +39,7 @@ if(!isset($_SESSION)) session_start();
             echo '<div class="col-12">';
 
 
-        echo '<table class="table">
+        echo '<table id="membertable" class="table table-striped">
         <thead>
           <tr>
             <th scope="col">#</th>
