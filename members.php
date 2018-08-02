@@ -28,6 +28,14 @@ if(!isset($_SESSION)) session_start();
 
         if(isset($_GET['deleteUser'])){
         
+
+
+            //Na bevestiging
+            //Modellen verwijderen
+                //Fotos bij modellen verwijderen, disk + db
+                //Gebruikers kleuren verwijderen
+                //Kleuren bij gebruikermodellen verwijderen
+
             echo "User verwijderen";
             
 
@@ -44,6 +52,12 @@ if(!isset($_SESSION)) session_start();
 
                 $passHash = substr(time(),0,10);
                 
+                try{
+                    emailWelcomeMessage($_POST['mail'], $passHash,$_POST['username']);
+                }catch(Exception $e){
+                    Log::addLogEntry($db_link, $_SESSION['usersid'], "User ".$_SESSION['username'] . " ".$e->getMessage());
+                    echo '<div class="alert alert-danger">'.$e->getMessage().'</div>';
+                }
                 
                 $qry->execute(array(':users_name'=>$_POST['username'], 
                                     ':users_password'=>$passHash,
