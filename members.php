@@ -30,8 +30,10 @@ if(!isset($_SESSION)) session_start();
                                                                                                     (NULL, :users_name, :users_password, :email, 0)");
 
                 echo $qry->queryString;
+
+                $passHash = substr(0,10,md5(time()));
                 $qry->execute(array(':user_name'=>$_POST['username'], 
-                                    ':users_password'=>substr(0,10,md5(time())),
+                                    ':users_password'=>$passHash,
                                     ':email'=>$_POST['mail']));
 
                 
