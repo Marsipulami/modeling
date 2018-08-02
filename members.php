@@ -31,10 +31,11 @@ if(!isset($_SESSION)) session_start();
 
                 
 
-                $passHash = substr(0,10,time());
-                var_dump( $passHash);
+                $passHash = substr(time(),0,10);
+                
+                
                 $qry->execute(array(':users_name'=>$_POST['username'], 
-                                    ':users_password'=>'blaat',
+                                    ':users_password'=>$passHash,
                                     ':email'=>$_POST['mail']));
 
                 
