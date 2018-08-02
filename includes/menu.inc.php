@@ -26,6 +26,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="addColor.php">Add Color to Database</a>
+          <a class="dropdown-item" href="members.php">Memberlist</a>
           <a class="dropdown-item" href="logging.php">Logging</a>
           
         </div>
