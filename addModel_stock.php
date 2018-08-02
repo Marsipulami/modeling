@@ -206,7 +206,8 @@ session_start();
                     <div class="col-sm-4 col-lg-8">
                         <select name="scale" id="scale" class="custom-select" required>
                             <option value="" selected>Schaal</option>
-                            <option value="" >Niet bekend</option>
+                            <option value="Niet bekend" >Niet bekend</option>
+                            <option value="1:16" >1:16</option>
                             <option value="1:35" >1:35</option>
                             <option value="1:48" >1:48</option>
                             <option value="1:72" >1:72</option>
