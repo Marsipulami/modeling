@@ -57,7 +57,7 @@ if(!isset($_SESSION)) session_start();
             <th scope="row">'.$count.'</th>
             <td>'.$row['users_name'].'</td>
             <td>'.$row['role'].'</td>
-            <td>'.date("d-M-Y", $row['last_login']).'</td>
+            <td>'.date("d-M-Y G:i:s", $row['last_login']).'</td>
                 </tr>';
 
 
