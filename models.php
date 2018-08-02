@@ -156,7 +156,7 @@ include_once("includes/addPhoto.inc.php");
                 }
 
                 var_dump($_POST);
-
+                echo "share ".$share;
                 $qry = $db_link->prepare("UPDATE paintdatabase.users_models SET shared= :shared AND comments= :comments WHERE users_models.user_id = :userID AND um_id= :umid");
                 $qry->execute(array(':comments'=>$_POST['comments'], 
                                     ':shared'=>$share, 
