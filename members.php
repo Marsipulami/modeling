@@ -36,7 +36,7 @@ if(!isset($_SESSION)) session_start();
                 
                 Log::addLogEntry($db_link, $_SESSION['usersid'], "User ".htmlentities($_POST['username']) . " added to database.");
                 echo '<div class="alert alert-success tempalert">Gebruiker toegevoegd en mail verstuurd.</div>';
-            }catch(Exeception $e)    {
+            }catch(PDOException  $e)    {
                 Log::addLogEntry($db_link, $_SESSION['usersid'], "User ".$_SESSION['username'] . " ".$e->getMessage());
                 echo '<div class="alert alert-danger">'.$e->getMessage().'</div>';
             }
