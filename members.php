@@ -33,7 +33,7 @@ if(!isset($_SESSION)) session_start();
 
                 $passHash = substr(0,10,md5(time()));
                 $qry->execute(array(':users_name'=>$_POST['username'], 
-                                    ':users_password'=>$passHash,
+                                    ':users_password'=>'blaat',
                                     ':email'=>$_POST['mail']));
 
                 
