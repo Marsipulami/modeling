@@ -26,11 +26,12 @@ if(!isset($_SESSION)) session_start();
 
             var_dump($_POST);
             try{
-                $qry = $db_link->prepare("INSERT INTO users (users_name,users_password,email) VALUES 
-                                                                                                    (:users_name, :users_password, :email)");
+                $qry = $db_link->prepare("INSERT INTO users (users_name,users_password,email,role) VALUES 
+                                                                                                    (:users_name, :users_password, :email, :role)");
                 $qry->execute(array(':user_name'=>$_POST['username'], 
                                     ':users_password'=>substr(0,10,md5(time())),
-                                    ':email'=>$_POST['mail']));
+                                    ':email'=>$_POST['mail'],
+                                    ':role'=> 0));
 
                 
                 Log::addLogEntry($db_link, $_SESSION['usersid'], "User ".htmlentities($_POST['username']) . " added to database.");
