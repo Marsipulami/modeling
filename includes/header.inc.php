@@ -25,7 +25,7 @@
   <link href="css/lightbox.css" rel="stylesheet">
   
   <!-- MDBootstrap Datatables  -->
-<link href="css/addons/datatables.min.css" rel="stylesheet">
+<link href="css/datatables.css" rel="stylesheet">
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -39,7 +39,7 @@
   <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
   <!-- MDBootstrap Datatables  -->
-  <script type="text/javascript" src="js/addons/datatables.min.js"></script>
+  <script type="text/javascript" src="js/datatables.js"></script>
   
   <script src="js/custom.js"></script>
   <link rel="stylesheet" href="css/custom.css">
