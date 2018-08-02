@@ -72,12 +72,13 @@ if(!isset($_SESSION)) session_start();
 
 
         <div class="col-3" style="padding-top:50px">
-
+            <form method="post" action="">
             <table>
-                <tr><td>Naam:</td><td><input class="form-control" type="text" /></td></tr>
-                <tr><td>Email:</td><td><input class="form-control" type="text" /></td></tr>
-                <tr><td></td><td><input type="submit" value="Toevoegen" class="btn btn-primary btn-sm" /></td></tr>
+                <tr><td>Naam:</td><td><input class="form-control" name="username" type="text" required /></td></tr>
+                <tr><td>Email:</td><td><input class="form-control" name="mail" type="email" required/></td></tr>
+                <tr><td></td><td><input type="submit" name="add_user" value="Toevoegen" class="btn btn-primary btn-sm" /></td></tr>
             </table>
+            </form>
         </div>
 
 
