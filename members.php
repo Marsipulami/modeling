@@ -24,15 +24,15 @@ if(!isset($_SESSION)) session_start();
 
         if(isset($_POST['add_user'])){
 
-            var_dump($_POST);
+            
             try{
                 $qry = $db_link->prepare("INSERT INTO users (users_id,users_name,users_password,email,role,last_login) VALUES 
                                                                                                     (NULL,:users_name, :users_password, :email, 0,0)");
 
-                echo $qry->queryString;
+                
 
                 $passHash = substr(0,10,md5(time()));
-                $qry->execute(array(':user_name'=>$_POST['username'], 
+                $qry->execute(array(':users_name'=>$_POST['username'], 
                                     ':users_password'=>$passHash,
                                     ':email'=>$_POST['mail']));
 
