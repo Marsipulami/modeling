@@ -36,7 +36,7 @@ if(!isset($_SESSION)) session_start();
 
         echo '<div class="container">';
         echo '<div class="row top-buffer">';
-            echo '<div class="col-12">';
+            echo '<div class="col-9">';
 
 
         echo '<table id="membertable" class="table table-striped">
@@ -69,6 +69,18 @@ if(!isset($_SESSION)) session_start();
         </table>';
         
         echo '</div>
+
+
+        <div class="col-3">
+
+            <table>
+                <tr><td>Naam:</td><td><input type="text" /></td></tr>
+                <tr><td>Email:</td><td><input type="text" /></td></tr>
+            </table>
+        </div>
+
+
+
         </div>
         </div>';
         
