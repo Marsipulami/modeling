@@ -211,7 +211,7 @@ session_start();
                             <option value="1:35" >1:35</option>
                             <option value="1:48" >1:48</option>
                             <option value="1:72" >1:72</option>
-                            <option value="1:72" >1:44</option>
+                            <option value="1:144" >1:144</option>
                             
                         </select>
                     </div>
