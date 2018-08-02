@@ -89,7 +89,7 @@ if(!isset($_SESSION)) session_start();
             <td>'.$row['users_name'].'</td>
             <td>'.$row['role'].'</td>
             <td>'.date("d-M-Y G:i:s", $row['last_login']).'</td>
-            <td><a href="?deleteUser="'.$row['users_id'].'">Delete</a></td>
+            <td><a href="?deleteUser='.$row['users_id'].'">Delete</a></td>
                 </tr>';
 
 
