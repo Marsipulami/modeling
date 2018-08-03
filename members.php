@@ -53,13 +53,7 @@ if(!isset($_SESSION)) session_start();
 
                 $passHash = substr(time(),0,10);
                 
-                try{
-                    emailWelcomeMessage($_POST['mail'], $passHash,$_POST['username']);
-                }catch(Exception $e){
-                    Log::addLogEntry($db_link, $_SESSION['usersid'], "User ".$_SESSION['username'] . " ".$e->getMessage());
-                    echo '<div class="alert alert-danger">'.$e->getMessage().'</div>';
-                }
-                
+               
                 $qry->execute(array(':users_name'=>$_POST['username'], 
                                     ':users_password'=>$passHash,
                                     ':email'=>$_POST['mail']));
