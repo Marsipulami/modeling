@@ -27,7 +27,7 @@ if ($qry->rowCount() == 0) {
     echo "Nog geen modellen ingevoerd";
 
 }
-      // echo '<pre>';
+
 while ($row = $qry->fetch()) {
     echo '
         <div class="row buffer">';
@@ -44,7 +44,7 @@ while ($row = $qry->fetch()) {
                                 echo $row['name'];
                                 echo '</div>';
                                 echo '<div class="col-1">';
-                                if($row['shared'] == 1) echo "Shared";
+                                if($row['shared'] == 1) echo "<span class=\"label label-success\">Shared</label>";
                                 echo '</div></div>';
             echo '</a>';
     echo '</div>';
