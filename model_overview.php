@@ -40,10 +40,10 @@ while ($row = $qry->fetch()) {
                                 echo '<div class="hidden-xs-down col-2">';
                                 echo $row['brand'];
                                 echo '</div>';
-                                echo '<div class="col-9">';
+                                echo '<div class="col-8">';
                                 echo $row['name'];
                                 echo '</div>';
-                                echo '<div class="col-9">';
+                                echo '<div class="col-1">';
                                 if($row['shared'] == 1) echo "Shared";
                                 echo '</div></div>';
             echo '</a>';
