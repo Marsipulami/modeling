@@ -15,7 +15,7 @@ echo '</div>';
 echo '</div>';
 
 
-$qry = $db_link->prepare("SELECT brand,imagepath,name,users_models.um_id FROM users_models,models,brands WHERE models.models_brand=brands.id 
+$qry = $db_link->prepare("SELECT brand,imagepath,name,users_models.um_id,shared FROM users_models,models,brands WHERE models.models_brand=brands.id 
                                                                                         AND users_models.model_id = models_id 
                                                                                          
                                                                                           AND users_models.user_id= :userID");
@@ -42,6 +42,9 @@ while ($row = $qry->fetch()) {
                                 echo '</div>';
                                 echo '<div class="col-9">';
                                 echo $row['name'];
+                                echo '</div>';
+                                echo '<div class="col-9">';
+                                if($row['shared'] == 1) echo "Shared";
                                 echo '</div></div>';
             echo '</a>';
     echo '</div>';
