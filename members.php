@@ -51,11 +51,11 @@ if(!isset($_SESSION)) session_start();
 
                 
 
-                $passHash = substr(time(),0,10);
+                $passHash = substr(md5(time()),0,10);
                 
                
                 $qry->execute(array(':users_name'=>$_POST['username'], 
-                                    ':users_password'=>$passHash,
+                                    ':users_password'=>hash("sha256",$passHash),
                                     ':email'=>$_POST['mail']));
 
                 
