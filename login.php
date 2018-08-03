@@ -56,7 +56,7 @@ body, html {
             header('Location: /');
 
         }else{
-            Log::addLogEntry($db_link, $_SESSION['usersid'], "User ".$_POST['username'] . " has failed to log in.");
+            Log::addLogEntry($db_link, "User ".$_POST['username'] . " has failed to log in.");
             echo '<div class="alert alert-danger">Inloggen mislukt.</div>';
         }
 
