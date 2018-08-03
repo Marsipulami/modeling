@@ -5,6 +5,7 @@ if(!isset($_SESSION)) session_start();
         include_once("includes/sessioncheck.inc.php");
         include_once("includes/header.inc.php");
         include_once("includes/menu.inc.php");
+        include_once("includes/email.inc.php");
 
 
         ?>
@@ -62,6 +63,22 @@ if(!isset($_SESSION)) session_start();
                 $qry->execute(array(':users_name'=>$_POST['username'], 
                                     ':users_password'=>$passHash,
                                     ':email'=>$_POST['mail']));
+
+                
+                $welcome = new Email($_POST['mail'], "Nieuwe gebruiker modeling database");
+                $body = "Beste " . $_POST['username'] . "<br />
+                        <br />
+                        Welkom. Je kan nu inloggen op : https://modeling.oldersma.org<br />
+                        <br />
+                        Je gebruikersnaam is: ".$_POST['username'] ."<br />
+                        <br />
+                        Je wachtwoord is : ".$passHash ."<br/><br />
+                        <br />
+                        Vriendelijke groet";
+                        ;
+
+                $welcome->setMessage($body);
+                $welcome->sendMail();
 
                 
                 Log::addLogEntry($db_link, $_SESSION['usersid'], "User ".htmlentities($_POST['username']) . " added to database.");
