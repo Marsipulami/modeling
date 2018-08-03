@@ -44,7 +44,7 @@ while ($row = $qry->fetch()) {
                                 echo $row['name'];
                                 echo '</div>';
                                 echo '<div class="col-1">';
-                                if($row['shared'] == 1) echo "<span class=\"label label-success\">Shared</label> ";
+                                if($row['shared'] == 1) echo "<span class=\"label label-success\">Shared</span> ";
                                 echo '</div></div>';
             echo '</a>';
     echo '</div>';
