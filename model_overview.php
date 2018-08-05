@@ -14,7 +14,7 @@ if(isset($_GET['remove_model'])){
     $qry->execute(array(':userID' => $_SESSION['usersid'],
                         ':umid' => $_GET['remove_model']));
 
-    $results = $qry->fetchColumn();
+    $results = $qry->fetchAll();
     if($results){
         echo "jij mag hem verwijderen en hij word nu verwijderd";
         echo '<pre>';
