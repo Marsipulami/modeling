@@ -10,6 +10,7 @@ include_once("includes/menu.inc.php");
 <script>
 
 $('#deleteModelModal').on('show.bs.modal', function(e) {
+    alert()
     $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
 });
 
