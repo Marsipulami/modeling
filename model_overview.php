@@ -45,7 +45,10 @@ while ($row = $qry->fetch()) {
                                 echo '</div>';
                                 echo '<div class="col-1">';
                                 if($row['shared'] == 1) echo "<label class=\"badge badge-success\">Shared</label>";
-                                echo '</div></div>';
+                                echo '</div>';
+                                echo '<div class="col-1">
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                </div></div>';
             echo '</a>';
     echo '</div>';
 
