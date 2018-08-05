@@ -6,6 +6,28 @@ include_once("includes/menu.inc.php");
 
 
 
+
+
+
+
+
+if(isset($_GET['remove_model'])){
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 echo '<div class="container">';
 
 echo '<div class="row buffer" >';
@@ -50,15 +72,33 @@ while ($row = $qry->fetch()) {
                                 <a href="models.php?used_model='.$row['um_id'].'" ><i class="fa fa-eye" aria-hidden="true"></i></a>
                                 </div>';
                                 echo '<div class="col-1">
-                                <i class="fa fa-ban" aria-hidden="true"></i>
+                                <a href="model_overview.php?remove_model='.$row['um_id'].'" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-ban" aria-hidden="true"></i></a>
                                 </div>';
                                 echo '</div>';
             // echo '</a>';
     echo '</div>';
 
 
-
-    echo '</div>';
+    echo '<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>';
+      echo '</div>';
 
 }
 
