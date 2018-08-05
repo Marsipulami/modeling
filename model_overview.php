@@ -9,7 +9,7 @@ include_once("includes/menu.inc.php");
 if(isset($_GET['remove_model'])){
     $qry = $db_link->prepare("SELECT brand,imagepath,name,users_models.um_id,shared FROM users_models,models,brands WHERE models.models_brand=brands.id 
                                                                                         AND users_models.model_id = models_id 
-                                                                                        AND users_models.model_id = :umid
+                                                                                        AND users_models.um_id = :umid
                                                                                           AND users_models.user_id= :userID");
     $qry->execute(array(':userID' => $_SESSION['usersid'],
                         ':umid' => $_GET['remove_model']));
