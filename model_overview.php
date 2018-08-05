@@ -32,8 +32,9 @@ while ($row = $qry->fetch()) {
     echo '
         <div class="row buffer">';
         echo '<div class="col-10">';
-            echo '<a href="models.php?used_model='.$row['um_id'].'" >';
-                    echo '<div class="row">
+            
+                    echo '<div class="row">';
+                    echo '<a href="models.php?used_model='.$row['um_id'].'" >
                             <div class="col-1">';
                                 echo '<img class="logo_small" src="' . $row['imagepath'] . '" >';
                                 echo '</div>';
