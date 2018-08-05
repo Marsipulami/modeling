@@ -40,7 +40,7 @@ while ($row = $qry->fetch()) {
                                 echo '<div class="hidden-xs-down col-2">';
                                 echo $row['brand'];
                                 echo '</div>';
-                                echo '<div class="col-7">';
+                                echo '<div class="col-6">';
                                 echo $row['name'];
                                 echo '</div>';
                                 echo '<div class="col-1">';
