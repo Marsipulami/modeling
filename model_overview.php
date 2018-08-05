@@ -32,7 +32,7 @@ while ($row = $qry->fetch()) {
     echo '
         <div class="row buffer">';
         echo '<div class="col-10">';
-            echo '<a href="models.php?used_model='.$row['um_id'].'" >';
+            // echo '<a href="models.php?used_model='.$row['um_id'].'" >';
                     echo '<div class="row">
                             <div class="col-1">';
                                 echo '<img class="logo_small" src="' . $row['imagepath'] . '" >';
@@ -47,9 +47,13 @@ while ($row = $qry->fetch()) {
                                 if($row['shared'] == 1) echo "<label class=\"badge badge-success\">Shared</label>";
                                 echo '</div>';
                                 echo '<div class="col-1">
-                                <a href="" ><i class="fa fa-ban" aria-hidden="true"></i></a>
-                                </div></div>';
-            echo '</a>';
+                                <a href="models.php?used_model='.$row['um_id'].'" ><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                </div>';
+                                echo '<div class="col-1">
+                                <i class="fa fa-ban" aria-hidden="true"></i>
+                                </div>';
+                                echo '</div>';
+            // echo '</a>';
     echo '</div>';
 
 
