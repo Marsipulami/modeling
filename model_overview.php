@@ -5,18 +5,6 @@ include_once("includes/header.inc.php");
 include_once("includes/menu.inc.php");
 
 
-?>
-
-<script>
-
-$('#deleteModelModal').on('show.bs.modal', function(e) {
-    alert()
-    $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
-});
-
-</script>
-
-<?php
 
 if(isset($_GET['remove_model'])){
 
@@ -79,7 +67,7 @@ while ($row = $qry->fetch()) {
                                 <a href="models.php?used_model='.$row['um_id'].'" ><i class="fa fa-eye" aria-hidden="true"></i></a>
                                 </div>';
                                 echo '<div class="col-1">
-                                <a href="#" data-href="model_overview.php?remove_model='.$row['um_id'].'" data-toggle="modal" data-target="#deleteModelModal"><i class="fa fa-ban" aria-hidden="true"></i></a>
+                                <a href="#" data-href="/model_overview.php?remove_model='.$row['um_id'].'" data-toggle="modal" data-target="#deleteModelModal"><i class="fa fa-ban" aria-hidden="true"></i></a>
                                 </div>';
                                 echo '</div>';
             // echo '</a>';
@@ -108,6 +96,18 @@ while ($row = $qry->fetch()) {
                         </div>
                     </div>';
 }
+
+
+?>
+<script>
+
+$('#deleteModelModal').on('show.bs.modal', function(e) {
+
+    $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+});
+
+</script>
+<?php
 
 
 
