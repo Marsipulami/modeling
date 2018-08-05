@@ -72,24 +72,26 @@ while ($row = $qry->fetch()) {
                                 <a href="models.php?used_model='.$row['um_id'].'" ><i class="fa fa-eye" aria-hidden="true"></i></a>
                                 </div>';
                                 echo '<div class="col-1">
-                                <a href="model_overview.php?remove_model='.$row['um_id'].'" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-ban" aria-hidden="true"></i></a>
+                                <a href="#" data-href="model_overview.php?remove_model='.$row['um_id'].'" data-toggle="modal" data-target="#deleteModelModal"><i class="fa fa-ban" aria-hidden="true"></i></a>
                                 </div>';
                                 echo '</div>';
             // echo '</a>';
-    echo '</div>';
+            echo '</div>';
+      echo '</div>';
 
 
-    echo '<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+      echo '<div class="modal fade" id="deleteModelModal" tabindex="-1" role="dialog" aria-labelledby="deleteModelModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title" id="deleteModelModalLabel">Weet u het zeker?</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          ...
+          Wilt u dit model inclusief alle afbeeldingen en kleur-referenties verwijderen ?
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -98,8 +100,6 @@ while ($row = $qry->fetch()) {
       </div>
     </div>
   </div>';
-      echo '</div>';
-
 }
 
 
