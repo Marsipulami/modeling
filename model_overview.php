@@ -17,6 +17,10 @@ if(isset($_GET['remove_model'])){
     $results = $qry->fetchColumn();
     if($results){
         echo "jij mag hem verwijderen en hij word nu verwijderd";
+        echo '<pre>';
+        var_dump($results);
+
+
     }
     else{
         echo '<div class="alert alert-danger">Jij mag dit model niet verwijderen !</div>';
