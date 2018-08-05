@@ -32,7 +32,7 @@ session_start();
 <?php
 
 
-    $qry = $db_link->prepare("SELECT * FROM logging ORDER By timestamp DESC ");
+    $qry = $db_link->prepare("SELECT * FROM logging ORDER By timestamp ASC ");
     $qry->execute();
     $brands = null;
 
