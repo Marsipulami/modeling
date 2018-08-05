@@ -90,7 +90,7 @@ while ($row = $qry->fetch()) {
                             </div>
                             <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary btn-ok">Save changes</button>
+                            <a type="button" class="btn btn-primary btn-ok">Save changes</a>
                             </div>
                         </div>
                         </div>
