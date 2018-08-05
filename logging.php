@@ -23,8 +23,9 @@ session_start();
 
 <script>
         $(document).ready(function () {
-             $('#logtable').DataTable(
-                "order": [[ 1, "desc" ]]
+             $('#logtable').DataTable({
+                "order": [[ 0, "desc" ]]
+             }
              );
              $('.dataTables_length').addClass('bs-select');
         });
