@@ -26,7 +26,7 @@
                     // echo "File is an image - " . $check["mime"] . ".";
                     $this->uploadOk = 1;
                 } else {
-                    echo "onbekend";
+                     echo "File is an image - " . $check["mime"] . ".";
                     throw new Exception("Bestand is geen plaatje");
                     $this->uploadOk = 0;
                 }
