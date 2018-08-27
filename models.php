@@ -327,25 +327,25 @@ include_once("includes/addPhoto.inc.php");
                                                                                                 AND users_models.um_id= :umID");
                                 $qry->execute(array(':umID'=>$_GET['used_model']));
                                 if($qry->rowCount() > 0){
-                                    while($row = $qry->fetch()) {
+                                    while($rowColor = $qry->fetch()) {
                                         echo '<div class="row " >';
                                             echo '<div class="col-2 col-lg-1">';
-                                                echo '<img src="'.$row['imagepath'].'" class="logo_small" />';;
+                                                echo '<img src="'.$rowColor['imagepath'].'" class="logo_small" />';;
                                             echo '</div>';
                                             echo '<div class="d-none d-md-block col-md-4 col-lg-1">';
-                                                echo $row['brand'];
+                                                echo $rowColor['brand'];
                                             echo '</div>';
                                             echo '<div class="d-none d-md-block col-md-6 col-lg-2">';
-                                                echo $row['type'];
+                                                echo $rowColor['type'];
                                             echo '</div>';
                                             echo '<div class="col-3 col-md-3 col-lg-2">';
-                                                echo $row['color_name'];
+                                                echo $rowColor['color_name'];
                                             echo '</div>';
                                             echo '<div class="col-4 col-lg-4">';
-                                                echo $row['comment'];
+                                                echo $rowColor['comment'];
                                             echo '</div>';
                                             echo '<div class="col-1 col-lg-1">';
-                                                echo '<span style="border:1px solid black; background-color: #'.$row['rgb'].'" >&nbsp;&nbsp;&nbsp;&nbsp; </span>';
+                                                echo '<span style="border:1px solid black; background-color: #'.$rowColor['rgb'].'" >&nbsp;&nbsp;&nbsp;&nbsp; </span>';
                                             echo '</div>';
                                             echo '<div class="col-1 col-lg-1">';
                                             if($_SESSION['usersid'] == $row['user_id']){
