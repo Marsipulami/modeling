@@ -26,6 +26,7 @@
                     // echo "File is an image - " . $check["mime"] . ".";
                     $this->uploadOk = 1;
                 } else {
+                    echo "onbekend";
                     throw new Exception("Bestand is geen plaatje");
                     $this->uploadOk = 0;
                 }
@@ -43,6 +44,7 @@
             // Allow certain file formats
             if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
             && $imageFileType != "gif" ) {
+                echo "exten";
                 throw new Exception("Bestand is geen plaatje");
                 $this->uploadOk = 0;
             }
