@@ -20,6 +20,8 @@
 
             $imageFileType = strtolower(pathinfo(basename($this->files["image"]["name"]),PATHINFO_EXTENSION));
             // Check if image file is a actual image or fake image
+            echo '<pre>';
+            var_dump($this->files);
                 echo $this->files["image"]["tmp_name"] ."<br />";
                 $check = getimagesize($this->files["image"]["tmp_name"]);
                 if($check !== false) {
