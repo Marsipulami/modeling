@@ -396,6 +396,7 @@ include_once("includes/addPhoto.inc.php");
                             </script>';
 
                             if($_SESSION['usersid'] == $row['user_id']){
+                            echo "BLAAA";
                             echo '<div class="row top-buffer"><div class="col-sm-4 col-lg-4">
                                     <input type="text" class="colorobject-multiple form-control"  name="color"  required/>    
                                 </div>
