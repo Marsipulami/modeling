@@ -394,7 +394,7 @@ include_once("includes/addPhoto.inc.php");
                             
                             
                             </script>';
-                            echo "BLAAA ".$_SESSION['usersid'] . " => ".$row['user_id'];
+                           
                             if($_SESSION['usersid'] == $row['user_id']){
                             
                             echo '<div class="row top-buffer"><div class="col-sm-4 col-lg-4">
