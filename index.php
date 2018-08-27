@@ -70,6 +70,11 @@ Upload photos during youre project<br />
 Share project with other members<br />
 <br />
 
+<h3>Known issues</h3>
+<br />
+Unable to edit model scale/product number after submitting<br />
+
+
     </div>
   </div>
 
