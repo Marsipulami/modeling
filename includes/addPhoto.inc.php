@@ -20,9 +20,7 @@
 
             $imageFileType = strtolower(pathinfo(basename($this->files["image"]["name"]),PATHINFO_EXTENSION));
             // Check if image file is a actual image or fake image
-            echo '<pre>';
-            var_dump($this->files);
-                echo $this->files["image"]["tmp_name"] ."<br />";
+           
                 $check = getimagesize($this->files["image"]["tmp_name"]);
                 if($check !== false) {
                     // echo "File is an image - " . $check["mime"] . ".";
@@ -46,7 +44,7 @@
             // Allow certain file formats
             if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
             && $imageFileType != "gif" ) {
-                echo "exten";
+           
                 throw new Exception("Bestand is geen plaatje");
                 $this->uploadOk = 0;
             }
