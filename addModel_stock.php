@@ -44,6 +44,7 @@ session_start();
                                         ':scale'=>$_POST['scale']));
 
             echo '<div class="alert alert-success">Model toegevoegd aan de database.</div>';
+            Log::addLogEntry($db_link, $_SESSION['usersid'], "User ".$_SESSION['username'] . " added Model to Stock");
             $modelid = $db_link->lastInsertId();
             }catch(Exception $e){
                 echo '<div class="alert alert-danger">Model toevoegen mislukt.</div>';
