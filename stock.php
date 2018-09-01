@@ -44,6 +44,9 @@ echo '</div>';
             echo '<div class="col-1 col-lg-1">';
                 echo '<span style="border:1px solid black; background-color: #'.$row['rgb'].'" >&nbsp;&nbsp;&nbsp;&nbsp; </span>';
             echo '</div>';
+            echo '<div class="col-1 col-lg-1">';
+                echo $row['color_code'];
+            echo '</div>';
         
         
         echo '</div>';  
@@ -76,6 +79,9 @@ echo '</div>';
                 echo '</div>';
                 echo '<div class="col-1 col-lg-1">';
                     echo '<span style="border:1px solid black; background-color: #'.$row['rgb'].'" >&nbsp;&nbsp;&nbsp;&nbsp; </span>';
+                echo '</div>';
+                echo '<div class="col-1 col-lg-1">';
+                    echo $row['color_code'];
                 echo '</div>';
             
             
