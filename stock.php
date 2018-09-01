@@ -1,4 +1,5 @@
 <?php
+if(!isset($_SESSION)) session_start();
 include_once("includes/sessioncheck.inc.php");
 
 echo '<div class="row buffer" >';
