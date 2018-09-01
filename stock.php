@@ -8,7 +8,7 @@ echo '<div class="col-12">';
 echo '</div>';
 echo '</div>';
 
-       $qry = $db_link->prepare("SELECT imagepath,rgb,brand,color_name,color_code,type,airbrush,stock FROM users_colors,brands,colors,types WHERE users_colors.color_id=colors.color_id AND colors.brands_id = brands.id AND colors.types_id=types.id AND users_colors.users_id= :userID");
+       $qry = $db_link->prepare("SELECT imagepath,rgb,brand,color_name,color_code,type,airbrush,stock FROM users_colors,brands,colors,types WHERE users_colors.color_id=colors.color_id AND colors.brands_id = brands.id AND colors.types_id=types.id AND users_colors.users_id= :userID ORDER BY color_code");
        $qry->execute(array(':userID'=>$_SESSION['usersid']));
 
 
