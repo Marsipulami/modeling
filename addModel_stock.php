@@ -118,7 +118,7 @@ echo "test";
                                                                                     , "scale"=>$row['scale']);
    }
 
-//    var_dump($pre_loadedmodels);
+   var_dump($pre_loadedmodels);
 
 
    $qry = $db_link->prepare("SELECT brand,brands.id FROM brands,brands_types,brand_types WHERE brands_types.brands_id=brands.id
