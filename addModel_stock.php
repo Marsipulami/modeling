@@ -123,7 +123,7 @@ session_start();
 
    $qry = $db_link->prepare("SELECT brand,brands.id FROM brands,brands_types,brand_types WHERE brands_types.brands_id=brands.id
     AND brands_types.types_id=brand_types.id 
-        AND brand_types.id=1");
+        AND (brand_types.id=1 OR brand_types.id=7)");
     $qry->execute();
     $brands = null;
     while($row = $qry->fetch()) {
