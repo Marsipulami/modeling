@@ -106,7 +106,7 @@ session_start();
 
 <?php
 
-echo "test";
+
     $qry = $db_link->prepare("SELECT brand,brands.id,models.name,models_id,scale,prodnumber FROM models,brands WHERE models.models_brand=brands.id");
     $qry->execute();
 
@@ -118,7 +118,7 @@ echo "test";
                                                                                     , "scale"=>$row['scale']);
    }
 
-   var_dump($pre_loadedmodels);
+
 
 
    $qry = $db_link->prepare("SELECT brand,brands.id FROM brands,brands_types,brand_types WHERE brands_types.brands_id=brands.id
