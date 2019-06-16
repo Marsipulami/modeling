@@ -104,7 +104,7 @@ session_start();
 
 <body>
 
-<?
+<?php
 
 echo "test";
     $qry = $db_link->prepare("SELECT brand,brands.id,models.name,models_id,scale,prodnumber FROM models,brands WHERE models.models_brand=brands.id");
